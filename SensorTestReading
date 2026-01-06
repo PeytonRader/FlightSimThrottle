@@ -8,7 +8,7 @@ try:
   while True:
     # "Raw Angle" is a 12-bit value (0-4095).
     print(f"Raw Angle: {sensor.raw_angle}")
-    print(f"Degrees: {sensor.angle:.2f}")
+    print(f"Degrees: {(sensor.raw_angle / 4096) * 360:.2f}")
     # Short delay to stabilize readings and prevent the script from crashing
     time.sleep(0.1)
 except KeyboardInterrupt: 
